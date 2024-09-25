@@ -2,28 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="globals.css" /> 
+    <link rel="stylesheet" href="styleguide.css" /> 
+    <link rel="stylesheet" href="style.css" />
     <title>FinSight</title>
-
 </head>
+
 <body>
-    <div class="desktop">
-        <div class="overlap-group-wrapper">
-            <div class="overlap-group">
-                <a href="index.html" class="text-wrapper">HOME</a>
-                <a href="affordability_checker.html" class="div">Affordability Checker</a>
-                <a href="investment.html" class="personalised">
-                    Personalised
-                    <br />
-                    Investment Planning
-                </a>
-                <a href="about.html" class="text-wrapper-2">About Us</a>
-            </div>
-        </div>
+    <div class="desktop"> 
+        <div class="overlap-group-wrapper"> 
+            <div class="overlap-group"> 
+                <img class="rectangle" src="./assets/rectangle-2.svg" /> 
+                <div class="text-wrapper">Login</div> 
+                <img class="frame" src="./assets/frame-1.svg" /> 
+                <div class="div"> 
+                    <div class="frame-2"></div> 
+                    <div class="frame-3"></div> 
+                </div> 
+                <a href="index.html" class="text-wrapper-2">Home</a> 
+                <a href="affordability_checker.html" class="affordability">Affordability<br />Calculator</a> 
+                <a href="student_loan.html" class="student-loan">Student Loan<br />calculator</a> 
+                <a href="investment_planner.html" class="text-wrapper-3">AI investment planner</a> 
+            </div> 
+        </div> 
     </div>
 
-    <h1 id="message">asgsadfgsdg</h1>
+    <h1 id="message">Login Details</h1>
     <form id="loginForm" onsubmit="handleSubmit(event)">
         <input type="text" id="userId" placeholder="User ID" required />
         <input type="password" id="password" placeholder="Password" required />
