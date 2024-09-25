@@ -19,12 +19,12 @@ body {
 }
 
 .desktop .overlap-group {
-    background-image: url(./rectangle-1.svg);
+    background-image: url(./assets/rectangle-1.svg);
     background-size: cover; /* Cover the area */
-    height: 155px; /* Fixed height for the top area */
+    height: 155px; 
     position: relative;
     display: flex; /* Flexbox for easier alignment */
-    justify-content: space-around; /* Space items evenly */
+    justify-content: space-around; 
     align-items: center; /* Center vertically */
 }
 
