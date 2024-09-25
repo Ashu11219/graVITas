@@ -1,11 +1,12 @@
-# graVITas
-# 1) FINTECH - financial hub
-## prblm statement
+# graVITas HackBattle learners.py team
+# TRACK: Fintech
+# Project Name: 
+## Problem Statement
 <p>
   Many individuals struggle to manage and track their daily expenses, savings, and investments effectively. Financial tools are either too generic or complex to use.
 </p>
 
-## our soln 
+## Our Solution
 <p>
   Build a user-friendly financial dashboard that offers personalized insights and budgeting recommendations. Users can-
 
