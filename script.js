@@ -1,5 +1,5 @@
 import React from "react";
-import { Desktop } from "./Desktop"; // Ensure the path is correct
+import { Desktop } from "./Desktop";
 
 function App() {
   return (
