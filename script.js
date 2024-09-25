@@ -9,7 +9,7 @@ function handleSubmit(event) {
     const userId = document.getElementById('userId').value;
     const password = document.getElementById('password').value;
 
-    fetch('http://3000/login', {
+    fetch('http://localhost:3000/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
