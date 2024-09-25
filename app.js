@@ -1,8 +1,10 @@
 const express = require('express');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
+const cors = require('cors'); // Import the CORS middleware
 
 const app = express();
+app.use(cors()); // Enable CORS for all routes
 app.use(bodyParser.json());
 
 // MySQL connection
@@ -24,7 +26,7 @@ connection.connect((err) => {
 // API to handle login and fetch user data
 app.post('/login', (req, res) => {
     const { id, password } = req.body;
-
+    console.log(id, password);
     // Query to verify the user
     const query = `SELECT name FROM users WHERE id = ? AND password = ?`;
     connection.query(query, [id, password], (err, results) => {
