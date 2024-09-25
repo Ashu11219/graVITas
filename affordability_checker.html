@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affordability Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Affordability Checker</h2>
+
+    <label for="productPrice">Product Price (₹):</label>
+    <input type="number" id="productPrice" placeholder="Enter product price">
+
+    <label for="downPayment">Down Payment (₹):</label>
+    <input type="number" id="downPayment" placeholder="Enter down payment">
+
+    <label for="interestRate">Interest Rate (% per year):</label>
+    <input type="number" id="interestRate" placeholder="Enter annual interest rate">
+
+    <label for="emiTenure">EMI Tenure (months):</label>
+    <input type="number" id="emiTenure" placeholder="Enter EMI tenure in months">
+
+    <button onclick="calculateIncome()">Calculate Comfortable Income</button>
+
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    function calculateIncome() {
+        const productPrice = parseFloat(document.getElementById('productPrice').value);
+        const downPayment = parseFloat(document.getElementById('downPayment').value);
+        const interestRate = parseFloat(document.getElementById('interestRate').value);
+        const emiTenure = parseFloat(document.getElementById('emiTenure').value);
+
+        if (isNaN(productPrice) || isNaN(downPayment) || isNaN(interestRate) || isNaN(emiTenure)) {
+            document.getElementById('result').innerHTML = 'Please enter valid numbers for all fields.';
+            return;
+        }
+
+        // Calculate loan amount
+        const loanAmount = productPrice - downPayment;
+
+        // Convert interest rate to monthly rate (annual rate / 12 / 100)
+        const monthlyInterestRate = interestRate / (12 * 100);
+
+        // Calculate EMI using the formula
+        const emi = (loanAmount * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, emiTenure)) /
+                    (Math.pow(1 + monthlyInterestRate, emiTenure) - 1);
+
+        // Salary should be at least 2.5 times the EMI (EMI should be 40% or less of the salary)
+        const comfortableIncome = emi * 2.5;
+
+        // Display result
+        const resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = `To comfortably afford this product, your monthly income should be at least ₹${comfortableIncome.toFixed(2)}.`;
+    }
+</script>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-# graVITas HackBattle FinSight
+# graVITas HackBattle: FinSight
 # TRACK: Fintech
 ## Problem Statement
 <p>
@@ -11,7 +11,7 @@
 
   1. Track their incomes & expenses in real time on homepage.
   2. Robo-advisory platform that provides personalized investment recommendations based on the user's financial goals, risk tolerance, and market trends. 
-  3. Affordability calculators which take in product cost, down payment, EMI rate, EMI tenure, Interest %, etc to tell how much income required to afford the product comfortably.
+  3. Affordability calculators which take in product cost, EMI rate, EMI tenure, Interest %, etc to tell how much income required to afford the product comfortably.
 
 </p>
 
