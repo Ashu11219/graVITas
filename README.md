@@ -1,6 +1,5 @@
-# graVITas HackBattle learners.py team
+# graVITas HackBattle FinSight
 # TRACK: Fintech
-# Project Name: 
 ## Problem Statement
 <p>
   Many individuals struggle to manage and track their daily expenses, savings, and investments effectively. Financial tools are either too generic or complex to use.
@@ -15,3 +14,5 @@
   3. Affordability calculators which take in product cost, down payment, EMI rate, EMI tenure, Interest %, etc to tell how much income required to afford the product comfortably.
 
 </p>
+
+## Team Name: learners.py
