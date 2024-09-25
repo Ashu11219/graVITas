@@ -4,48 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Affordability Checker</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .container {
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-        }
-        h2 {
-            text-align: center;
-        }
-        input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        .result {
-            margin-top: 20px;
-            font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" href="calculator.css" />
 </head>
 <body>
 
+<!-- Top Bar (Navigation Menu) -->
+<div class="navbar">
+    <div class="logo">
+        <a href="index.html">FinSight</a>
+    </div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="affordability_checker.html">Affordability Calculator</a>
+        <a href="student_loan.html">Student Loan Calculator</a>
+        <a href="investment_planner.html">AI Investment Planner</a>
+    </div>
+</div>
+
+<!-- Affordability Calculator -->
 <div class="container">
     <h2>Affordability Checker</h2>
 
@@ -78,20 +54,12 @@
             return;
         }
 
-        // Calculate loan amount
         const loanAmount = productPrice - downPayment;
-
-        // Convert interest rate to monthly rate (annual rate / 12 / 100)
         const monthlyInterestRate = interestRate / (12 * 100);
-
-        // Calculate EMI using the formula
         const emi = (loanAmount * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, emiTenure)) /
                     (Math.pow(1 + monthlyInterestRate, emiTenure) - 1);
 
-        // Salary should be at least 2.5 times the EMI (EMI should be 40% or less of the salary)
         const comfortableIncome = emi * 2.5;
-
-        // Display result
         const resultDiv = document.getElementById('result');
         resultDiv.innerHTML = `To comfortably afford this product, your monthly income should be at least ₹${comfortableIncome.toFixed(2)}.`;
     }
