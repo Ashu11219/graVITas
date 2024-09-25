@@ -15,7 +15,7 @@ function handleSubmit(event) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ id: userId, password: password })
-    })
+    })  
       .then(response => response.json())
       .then(data => {
         if (data.error) {

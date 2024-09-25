@@ -1,5 +1,5 @@
 const express = require('express');
-const mysql = require('mysql');
+const mysql = require('mysql2');
 const bodyParser = require('body-parser');
 const cors = require('cors'); // Import the CORS middleware
 
@@ -26,19 +26,22 @@ connection.connect((err) => {
 // API to handle login and fetch user data
 app.post('/login', (req, res) => {
     const { id, password } = req.body;
-    console.log(id, password);
+    
     // Query to verify the user
-    const query = `SELECT name FROM users WHERE id = ? AND password = ?`;
+    const query = `SELECT id, name FROM users WHERE id = ? AND password = ?`;
     connection.query(query, [id, password], (err, results) => {
         if (err) {
             return res.status(500).json({ error: 'Database query failed' });
         }
 
+        // Check if user was found
         if (results.length > 0) {
+            const userId = results[0].id;
+            console.log("User ID:", userId);
+
             // On successful login, fetch the user's expenses
-            const queryExpenses = `SELECT name_of_expense, type_of_expense, category_of_expense, amount 
-                                   FROM expenses WHERE user_id = ? ORDER BY date DESC LIMIT 10`;
-            connection.query(queryExpenses, [id], (err, expenseResults) => {
+            const queryExpenses = `SELECT name_of_expense, type_of_expense, category, amount FROM transactions WHERE user_id = ?`;
+            connection.query(queryExpenses, [userId], (err, expenseResults) => {
                 if (err) {
                     return res.status(500).json({ error: 'Failed to fetch expenses' });
                 }
@@ -49,6 +52,8 @@ app.post('/login', (req, res) => {
         }
     });
 });
+
+
 
 // Start the server
 const port = process.env.PORT || 3000;
