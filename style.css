@@ -3,24 +3,10 @@ a{
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-image: url("./assets/bg.svg"); /* Replace with your image path */
+    font-family: 'EB Garamond', serif;
     background-size: cover;
     background-attachment: fixed;
     color: #fff;
-}
-
-.blurred-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("./assets/bg.svg"); /* Same image as the body */
-    background-size: cover;
-    background-attachment: fixed;
-    filter: blur(50px); /* Adjust the blur radius as needed */
-    z-index: -1;
 }
 
 header {
@@ -68,10 +54,30 @@ nav ul a:hover {
 }
 
 main {
-    padding: 20px;
+    padding: 40px;
 }
 
 footer {
     text-align: center;
     padding: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    /* Styles for screens less than or equal to 600px */
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    .ocean-image {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Add more styles as needed */
 }

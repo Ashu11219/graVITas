@@ -5,7 +5,28 @@
     <link rel="stylesheet" href="globals.css" /> 
     <link rel="stylesheet" href="styleguide.css" /> 
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,700" rel="stylesheet">
     <title>FinSight</title>
+
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: 'EB Garamond', serif;
+        }
+    
+        .background {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-image: url("./assets/bg.svg");
+            background-size: cover;
+            background-position: center;
+            filter: blur(5px);
+            z-index: -1;
+        }
+    </style>
 </head>
 
 <h1 id="message">Login Details</h1>
@@ -14,7 +35,9 @@
     <input type="password" id="password" placeholder="Password" required />
     <button type="submit">Login</button>
 </form>
+
 <body>
+    <div class="background"></div>
     <header class="logo">
         <img src="./assets/FinSightlogo.svg">
         <h1>FinSight</h1>
