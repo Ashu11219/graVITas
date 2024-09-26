@@ -89,6 +89,7 @@ a{
     font-weight: 400;
     color: #ffffff;
     font-size: 32px;
+    text-align: center
 }
 
 .desktop .affordability {
@@ -127,6 +128,7 @@ a{
     font-weight: 400;
     color: #e3e2f0;
     font-size: 32px;
+    
 }
 
 /* Media Query for Responsiveness on Mobile Devices */

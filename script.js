@@ -34,7 +34,7 @@ function generateTable(expenses) {
     table += `<tr>
           <td>${expense.name_of_expense}</td>
           <td>${expense.type_of_expense}</td>
-          <td>${expense.category_of_expense}</td>
+          <td>${expense.category}</td>
           <td>${expense.amount}</td>
       </tr>`;
   });
