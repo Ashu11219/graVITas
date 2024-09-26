@@ -1,0 +1,83 @@
+/* Text styles */
+.text-large {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.text-medium {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.text-small {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Button styles */
+.button-primary {
+    background-color: #13455f;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.button-primary:hover {
+    background-color: #0d3346;
+}
+
+/* Link styles */
+.link {
+    color: #13455f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/* Input field styles */
+.input-field {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 300px;
+    font-size: 16px;
+}
+
+.input-field:focus {
+    border-color: #13455f;
+    outline: none;
+}
+
+/* Margin classes */
+.margin-top-sm {
+    margin-top: 10px;
+}
+
+.margin-top-md {
+    margin-top: 20px;
+}
+
+.margin-top-lg {
+    margin-top: 30px;
+}
+
+/* Padding classes */
+.padding-sm {
+    padding: 10px;
+}
+
+.padding-md {
+    padding: 20px;
+}
+
+.padding-lg {
+    padding: 30px;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Investment Planner</title>
+    <link rel="stylesheet" href="style_invest.css"> <!-- Assuming you have a styles.css file -->
+</head>
+<body>
+    <div class="nav-bar">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="affordability_checker.html" class="nav-link">Affordability Calculator</a>
+        <a href="student_loan.html" class="nav-link">Student Loan Calculator</a>
+        <a href="investment_planner.html" class="nav-link active">AI Investment Planner</a>
+    </div>
+
+    <div class="container">
+        <h1>AI Investment Planner</h1>
+
+        <form id="investmentForm" onsubmit="handleInvestment(event)">
+            <label for="investmentAmount">Enter Investment Amount:</label>
+            <input type="number" id="investmentAmount" placeholder="Enter amount" required />
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="investmentResults"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

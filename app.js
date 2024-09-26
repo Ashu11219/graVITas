@@ -7,6 +7,9 @@ const app = express();
 app.use(cors()); // Enable CORS for all routes
 app.use(bodyParser.json());
 
+app.use(express.json()); // Use it throughout the file, without redeclaring
+app.use(express.urlencoded({ extended: true }));
+
 // MySQL connection
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -54,6 +57,28 @@ app.post('/login', (req, res) => {
 });
 
 
+//for the ai investment
+const { exec } = require('child_process');
+
+app.get('/investments', (req, res) => {
+    const { amount } = req.body;
+    
+    // Execute the Python script with the investment amount as input
+    exec(`python3 investment_model.py ${amount}`, (error, stdout, stderr) => {
+        if (error) {
+            console.error(`Error: ${error.message}`);
+            return res.status(500).send('Server error');
+        }
+        if (stderr) {
+            console.error(`Stderr: ${stderr}`);
+            return res.status(500).send('Python script error');
+        }
+
+        // Parse the Python output and send it as a response
+        const result = JSON.parse(stdout);
+        res.json(result);
+    });
+});
 
 // Start the server
 const port = process.env.PORT || 3000;
