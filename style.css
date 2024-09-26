@@ -9,6 +9,70 @@ body {
     color: #fff;
 }
 
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'EB Garamond', serif;
+
+
+    nav {
+        margin-top: 20px; /* Add spacing between header and nav */
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        gap: 50px; /* Add space between the menu items */
+        font-size: 24px; /* Make the font bigger */
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    nav ul a {
+        text-decoration: none;
+        color: #fff;
+        padding: 10px 20px;
+        background-color: #333;
+        border-radius: 5px;
+        transition: background-color 0.3s ease; /* Smooth hover effect */
+    }
+
+    nav ul a:hover {
+        background-color: #555; /* Slightly lighter color on hover */
+    }
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align horizontally */
+    justify-content: center; /* Center align vertically */
+    height: 100vh; /* Full height of the viewport */
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+    align-items: center; /* Center form elements horizontally */
+}
+
+input {
+    margin: 10px 0; /* Space between inputs */
+    padding: 10px;
+    width: 200px; /* Width of input fields */
+}
+
+button {
+    padding: 10px 15px; /* Button padding */
+}
+
+
 header {
     display: flex;
     align-items: center;
@@ -22,7 +86,7 @@ header img {
 
 header h1 {
     text-align: center;
-    font-size: 48px;
+    font-size: 80px;
 }
 
 .logo{
@@ -45,9 +109,36 @@ nav ul li {
 nav ul a {
     text-decoration: none;
     color: #fff;
-    padding: 10px;
+    padding: 50px;
     border-radius: 5px;
 }
+
+#expenseTable {
+    width: 500px; /* Adjust the width */
+    margin: 0 auto; /* Center the table */
+    border-collapse: collapse;
+    font-size: 20px;
+}
+
+#expenseTable th {
+    background-color: #4CAF50; /* Color for header row */
+    color: white; /* White text for contrast */
+    padding: 15px;
+}
+
+#expenseTable tr:nth-child(odd) {
+    background-color: #e500009a; /* Light color for odd rows */
+}
+
+#expenseTable tr:nth-child(even) {
+    background-color: #ffb700af; /* White color for even rows */
+}
+
+#expenseTable td {
+    padding: 10px;
+    text-align: left;
+}
+
 
 nav ul a:hover {
     background-color: #333;
@@ -71,7 +162,13 @@ footer {
     }
 
     nav ul {
-        flex-direction: column;
+        
+        flex-direction: column; /* Stack items on small screens */
+        gap: 20px; /* Reduce gap between items */
+    }
+
+    nav ul a {
+        padding: 15px 25px;
     }
 
     .ocean-image {
